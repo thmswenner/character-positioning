@@ -1,15 +1,15 @@
-var letterCounting = {};
-
 function countLetters (str) {
-  str = str.replace(/ /g, '')
+  var letterCounting = {};
+  str = str.split(' ').join('')
   for (var i = 0; i < str.length; i++ ) {
     if (!letterCounting[str[i]]) {
-      letterCounting[str[i]] = 1;
+      letterCounting[str[i]] = [i];
     } else {
-      letterCounting[str[i]] += 1;
+      letterCounting[str[i]].push(i);
     }
   }
-  console.log(letterCounting);
+    return letterCounting
 }
 
-countLetters("lighthouse in the house")
+
+console.log(countLetters("lighthouse in the house"));
